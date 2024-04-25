@@ -83,52 +83,52 @@ describe("閉区間に値が含まれるか", () => {
 
 describe("閉区間の等価比較", () => {
   it("閉区間[3,8]と閉区間[3,8]は等しい", () => {
-    const sut1 = new ClosedRange(3, 8);
-    const sut2 = new ClosedRange(3, 8);
-    assertEquals(sut1.equals(sut2), true);
+    const sut = new ClosedRange(3, 8);
+    const subset = new ClosedRange(3, 8);
+    assertEquals(sut.equals(subset), true);
   });
 
   it("閉区間[3,8]と閉区間[4,8]は等しくない", () => {
-    const sut1 = new ClosedRange(3, 8);
-    const sut2 = new ClosedRange(4, 8);
-    assertEquals(sut1.equals(sut2), false);
+    const sut = new ClosedRange(3, 8);
+    const subset = new ClosedRange(4, 8);
+    assertEquals(sut.equals(subset), false);
   });
 });
 
 describe("閉区間を含むか比較", () => {
   it("閉区間[3,8]は閉区間[5,7]を含む", () => {
-    const sut1 = new ClosedRange(3, 8);
-    const sut2 = new ClosedRange(5, 7);
-    assertEquals(sut1.includes(sut2), true);
+    const sut = new ClosedRange(3, 8);
+    const subset = new ClosedRange(5, 7);
+    assertEquals(sut.includes(subset), true);
   });
 
   it("閉区間[3,8]は閉区間[3,7]を含む", () => {
-    const sut1 = new ClosedRange(3, 8);
-    const sut2 = new ClosedRange(3, 7);
-    assertEquals(sut1.includes(sut2), true);
+    const sut = new ClosedRange(3, 8);
+    const subset = new ClosedRange(3, 7);
+    assertEquals(sut.includes(subset), true);
   });
 
   it("閉区間[3,8]は閉区間[5,8]を含む", () => {
-    const sut1 = new ClosedRange(3, 8);
-    const sut2 = new ClosedRange(5, 8);
-    assertEquals(sut1.includes(sut2), true);
+    const sut = new ClosedRange(3, 8);
+    const subset = new ClosedRange(5, 8);
+    assertEquals(sut.includes(subset), true);
   });
 
   it("閉区間[3,8]は閉区間[3,8]を含む", () => {
-    const sut1 = new ClosedRange(3, 8);
-    const sut2 = new ClosedRange(3, 8);
-    assertEquals(sut1.includes(sut2), true);
+    const sut = new ClosedRange(3, 8);
+    const subset = new ClosedRange(3, 8);
+    assertEquals(sut.includes(subset), true);
   });
 
   it("閉区間[3,8]は閉区間[2,8]を含まない", () => {
-    const sut1 = new ClosedRange(3, 8);
-    const sut2 = new ClosedRange(2, 8);
-    assertEquals(sut1.includes(sut2), false);
+    const sut = new ClosedRange(3, 8);
+    const subset = new ClosedRange(2, 8);
+    assertEquals(sut.includes(subset), false);
   });
 
   it("閉区間[3,8]は閉区間[3,9]を含まない", () => {
-    const sut1 = new ClosedRange(3, 8);
-    const sut2 = new ClosedRange(3, 9);
-    assertEquals(sut1.includes(sut2), false);
+    const sut = new ClosedRange(3, 8);
+    const subset = new ClosedRange(3, 9);
+    assertEquals(sut.includes(subset), false);
   });
 });
