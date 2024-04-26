@@ -1,6 +1,6 @@
 export class ClosedRange {
-  #start: number;
-  #end: number;
+  readonly #start: number;
+  readonly #end: number;
 
   constructor(start: number, end: number) {
     if (start > end) {
